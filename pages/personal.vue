@@ -21,10 +21,10 @@
             <label>我的账户：{{ userData.userName }}</label>
             <label>用户等级：{{ userData.userLevelName }}</label>
           </view>
-          <view class="head-money"> ¥ {{ userData.balance }} </view>
+          <view class="head-money"> {{ userData.balance }} </view>
           <view class="head-integral">
-            账户余额 ≈ ${{ userData.usdtAmount }}</view
-          >
+            余额（VND）奖励积分（0）
+            </view>
         </view>
         <view class="money">
           <view class="interest">

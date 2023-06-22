@@ -24,7 +24,7 @@
         <view class="line"></view>
         <view class="title-time">详情</view>
         <view class="line"></view>
-        <view class="title-time">合同</view>
+        <!-- <view class="title-time">合同</view> -->
       </view>
       <u-list @scrolltolower="load" v-if="isArray" class="scroll">
         <u-list-item v-for="(item, index) in list" :key="index">
@@ -49,11 +49,11 @@
             </view>
 
             <view class="line"></view>
-            <view class="table-time">
+            <!-- <view class="table-time">
               <label class="grey-text" @click="goContract(item.orderNo)">
                 查看
               </label>
-            </view>
+            </view> -->
           </view>
         </u-list-item>
         <view class="loading" v-if="loading">加载中...</view>

@@ -18,7 +18,7 @@
         <image
           class="image"
           mode="widthFix"
-          src="../static/img/zhenshi_about_post.png"
+          src="../static/img/about.png"
         />
       </scroll-view>
     </view>

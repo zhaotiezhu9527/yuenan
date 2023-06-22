@@ -47,7 +47,7 @@
           >
             <image class="img" :src="item.img" mode="widthFix" />
             <view class="name">
-              <text>保</text>
+              <text></text>
               <text>{{ item.projectName }}</text>
             </view>
             <view class="rate">

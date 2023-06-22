@@ -18,7 +18,7 @@
         <image
           class="img"
           mode="widthFix"
-          src="../static/img/login_zhenhsi_logo.jpg"
+          src="../static/img/login_logo.png"
         />
       </view>
       <view class="from">
