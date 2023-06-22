@@ -8,7 +8,6 @@ import i18n from "./plugins/lang/index.js";
 Vue.use(router);
 Vue.use(uView);
 Vue.use(VueI18n);
-// 如此配置即可
 uni.$u.config.unit = "rpx";
 import * as base from "plugins/base.js";
 import * as api from "plugins/api.js";
