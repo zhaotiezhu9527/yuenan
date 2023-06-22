@@ -119,19 +119,27 @@ export default {
   data() {
     return {
       list: [
-        { name: "投资项目", img: img0, path: "/pages/investor" },
-        { name: "关于我们", img: img1, path: "/pages/about" },
-        { name: "计算器", img: img2 },
-        { name: "每日签到", img: img3 },
         {
-          name: "我要充值USDT",
+          name: this.$t("investmentProject"),
+          img: img0,
+          path: "/pages/investor",
+        },
+        { name: this.$t("about"), img: img1, path: "/pages/about" },
+        { name: this.$t("calculator"), img: img2 },
+        { name: this.$t("sign"), img: img3 },
+        {
+          name: this.$t("topUpUSDT"),
           img: img4,
           path: "/pages/preview",
         },
-        { name: "我要提现", img: img5, path: "/pages/withdraw" },
-        { name: "免费注册", img: img6, path: "/pages/register" },
+        { name: this.$t("mywithdraw"), img: img5, path: "/pages/withdraw" },
         {
-          name: "在线客服",
+          name: this.$t("freeRegistration"),
+          img: img6,
+          path: "/pages/register",
+        },
+        {
+          name: this.$t("onlineService"),
           img: img7,
           path: "/pages/preview",
         },
@@ -157,33 +165,33 @@ export default {
   },
   methods: {
     change({ name, path, url }) {
-      if (["投资项目", "关于我们"].includes(name)) {
+      if ([this.$t("investmentProject"), this.$t("about")].includes(name)) {
         uni.switchTab({
           url: path,
         });
-      } else if (name === "计算器") {
-        this.$base.show("敬请期待！");
-      } else if (name === "免费注册") {
+      } else if (name === this.$t("calculator")) {
+        this.$base.show(this.$t("comingSoon") + "！");
+      } else if (name === this.$t("freeRegistration")) {
         uni.navigateTo({
           url: path,
         });
-      } else if (name === "每日签到") {
+      } else if (name === this.$t("sign")) {
         this.$api.user_sign().then(({ data }) => {
           if (data.code == 0) {
             this.$base.show(data.msg + "~");
           }
         });
-      } else if (["我要充值USDT"].includes(name)) {
+      } else if ([this.$t("topUpUSDT")].includes(name)) {
         uni.navigateTo({
           url: "/pages/onlineService",
         });
-      } else if (["在线客服"].includes(name)) {
+      } else if ([this.$t("onlineService")].includes(name)) {
         uni.navigateTo({
           url: "/pages/onlineService",
         });
-      } else if (["我要提现"].includes(name)) {
+      } else if ([this.$t("mywithdraw")].includes(name)) {
         if (!this.infos.bankCardNum && !this.infos.walletAddr) {
-          return this.$base.show("请先绑定一种提款方式~");
+          return this.$base.show(this.$t("inputwalletType"));
         } else {
           uni.navigateTo({
             url: "/pages/withdraw",

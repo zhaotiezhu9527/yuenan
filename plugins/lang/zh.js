@@ -178,4 +178,11 @@ export default {
   sum: "金额",
   abstract: "摘要",
   balance: "余额（VND）奖励积分（0）",
+  investmentProject: "投资项目",
+  about: "关于我们",
+  calculator: "计算器",
+  comingSoon: "敬请期待",
+  topUpUSDT: "我要充值USDT",
+  freeRegistration: "免费注册",
+  mywithdraw: "我要提现",
 };
