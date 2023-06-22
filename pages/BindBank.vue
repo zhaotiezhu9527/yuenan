@@ -11,7 +11,7 @@
       leftIconColor="#fff"
       leftIconSize="32"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <view class="wrap">
@@ -136,8 +136,8 @@ export default {
     .card {
       padding: 30rpx 20rpx;
       height: 320rpx;
-      background-image: linear-gradient(#769ed6, #5375ae);
-      color: #fff;
+      background-image: linear-gradient(#f6d658, #f5c400);
+      color: #333;
       .card-name {
         font-size: 28rpx;
       }

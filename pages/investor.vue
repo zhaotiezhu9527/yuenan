@@ -10,7 +10,7 @@
       safe-area-inset-top
       bgColor="#f6d658"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <view class="wrap">
@@ -62,7 +62,7 @@
               <u-line-progress
                 :percentage="scheduleFn(item.schedule)"
                 :showText="false"
-                activeColor="#2196f3"
+                activeColor="#f6d658"
               />
               <view class="number">{{ item.schedule }}%</view>
             </view>

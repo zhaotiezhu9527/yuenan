@@ -10,7 +10,7 @@
       safe-area-inset-top
       bgColor="#f6d658"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <scroll-view scroll-y class="scroll">
@@ -293,7 +293,7 @@ export default {
   .head {
     height: 258rpx;
     background-image: linear-gradient(#f6d658, #f5c400);
-    color: #fff;
+    color: #333;
     .head-text {
       padding: 16rpx;
       font-size: 26rpx;
@@ -308,6 +308,7 @@ export default {
       text-align: center;
       font-weight: 500;
       margin-top: 5px;
+      
     }
     .head-integral {
       width: 100%;
@@ -320,7 +321,7 @@ export default {
     height: 90rpx;
     background-color: #d5b534;
     font-size: 24rpx;
-    color: #fff;
+    color: #333;
     align-items: center;
     vertical-align: middle;
     display: flex;
@@ -343,7 +344,7 @@ export default {
     align-items: center;
     .button-class {
       background-color: #f6d658;
-      color: #fff;
+      color: #333;
       font-weight: blod;
       font-size: 28rpx;
       border-radius: 15rpx;
