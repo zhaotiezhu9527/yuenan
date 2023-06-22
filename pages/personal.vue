@@ -24,7 +24,7 @@
             </label>
           </view>
           <view class="head-money"> {{ userData.balance }} </view>
-          <view class="head-integral"> {{ $t("balance") }}） </view>
+          <view class="head-integral"> {{ $t("balance") }}</view>
         </view>
         <view class="money">
           <view class="interest">
