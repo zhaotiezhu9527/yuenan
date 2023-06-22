@@ -22,7 +22,7 @@
         />
       </view>
       <view class="from">
-        <u-form ref="uForm" labelPosition="left" labelWidth="154">
+        <u-form ref="uForm" labelPosition="left" labelWidth="124">
           <u-form-item :label="$t('account')">
             <u-input
               type="text"

@@ -2,7 +2,7 @@
   <view class="page">
     <u-navbar
       placeholder
-      title="收益记录"
+      :title="$t('revenueRecords')"
       :border="false"
       autoBack
       fixed
@@ -16,13 +16,13 @@
     </u-navbar>
     <view class="wrap">
       <view class="title">
-        <view class="title-remark">项目名称</view>
+        <view class="title-remark">{{ $t("projectName") }}</view>
         <view class="line"></view>
-        <view class="title-amount">收益时间</view>
+        <view class="title-amount">{{ $t("returnTime") }}</view>
         <view class="line"></view>
-        <view class="title-amount">收益金额</view>
+        <view class="title-amount">{{ $t("amount") }}</view>
         <view class="line"></view>
-        <view class="title-time">状态</view>
+        <view class="title-time">{{ $t("status") }}</view>
       </view>
       <u-list @scrolltolower="load" v-if="isArray" class="scroll">
         <u-list-item v-for="(item, index) in list" :key="index">
@@ -36,14 +36,14 @@
             <view class="table-money">{{ item.amount }}</view>
             <view class="line"></view>
             <view class="table-time">{{
-              item.status ? "已完成" : "待收益"
+              item.status ? $t("complete") : $t("loadingAmount")
             }}</view>
           </view>
         </u-list-item>
-        <view class="loading" v-if="loading">加载中...</view>
-        <view class="nomore" v-if="finished">没有更多了</view>
+        <view class="loading" v-if="loading">{{ $t("loading") }}...</view>
+        <view class="nomore" v-if="finished">{{ $t("finished") }}</view>
       </u-list>
-      <u-empty class="empty" text="暂无数据" v-else />
+      <u-empty class="empty" :text="$t('nodata')" v-else />
     </view>
   </view>
 </template>

@@ -83,7 +83,7 @@
             </template>
             <u-input
               type="password"
-              :placeholder="$t('payPwd')"
+              :placeholder="$t('inputPayPwd')"
               clearable
               border="none"
               v-model="payPwd"

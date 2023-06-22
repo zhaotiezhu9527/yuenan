@@ -8,7 +8,7 @@ Vue.use(VueI18n);
 
 // 创建实例
 const i18n = new VueI18n({
-  locale: uni.getStorageSync("lang") ? uni.getStorageSync("lang") : "yn",
+  locale: uni.getStorageSync("lang") ? uni.getStorageSync("lang") : "zh",
   messages: {
     zh,
     yn,

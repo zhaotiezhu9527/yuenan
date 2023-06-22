@@ -2,7 +2,7 @@
   <view class="page">
     <u-navbar
       placeholder
-      title="修改登录密码"
+      :title="$t('alterLoginPwd')"
       :border="false"
       autoBack
       fixed
@@ -16,34 +16,34 @@
     </u-navbar>
     <view class="wrap">
       <view class="from-input">
-        <label>原登录密码</label>
+        <label>{{ $t("oldPwd") }}</label>
         <input
           type="password"
           v-model="oldPwd"
           class="input-text"
-          placeholder="请输入登录密码"
+          :placeholder="$t('loginPass')"
         />
       </view>
       <view class="from-input">
-        <label>新登录密码</label>
+        <label>{{ $t("newPwd") }}</label>
         <input
           type="password"
           v-model="newPwd"
           class="input-text"
-          placeholder="请输入新登录密码"
+          :placeholder="$t('loginNewPass')"
         />
       </view>
       <view class="from-input">
-        <label>确认密码</label>
+        <label>{{ $t("confirmPwd") }}</label>
         <input
           type="password"
           v-model="password"
           class="input-text"
-          placeholder="请输入确认密码"
+          :placeholder="$t('confirmLoginPwd')"
         />
       </view>
       <u-button class="btn-class" block @click="login" :loading="loading">
-        完成修改
+        {{ $t("sucAlter") }}
       </u-button>
     </view>
   </view>
@@ -62,13 +62,13 @@ export default {
   methods: {
     login() {
       if (!this.oldPwd) {
-        return this.$base.show("请输入原登录密码~");
+        return this.$base.show(this.$t("loginPass"));
       } else if (!this.newPwd || this.newPwd.length < 6) {
-        return this.$base.show("请输入新登录密码且长度大于6~");
+        return this.$base.show(this.$t("loginNewPass"));
       } else if (this.oldPwd === this.newPwd) {
-        return this.$base.show("新登录密码不能与原密码相同~");
+        return this.$base.show(this.$t("NoTwoLoginPwd"));
       } else if (this.password != this.newPwd) {
-        return this.$base.show("两次输入密码不一致~");
+        return this.$base.show(this.$t("twoPwd"));
       }
       const DATA_OBJ = {
         oldPwd: this.oldPwd,

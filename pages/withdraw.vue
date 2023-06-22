@@ -2,7 +2,7 @@
   <view class="page">
     <u-navbar
       placeholder
-      title="提现"
+      :title="$t('withdrawal')"
       :border="false"
       autoBack
       fixed
@@ -23,15 +23,15 @@
       </view>
       <view class="card-num">
         <view style="display: flex" v-if="type === 2">
-          USDT地址<label class="u-line-1">{{ infos.walletAddr }}</label>
+          {{ $t("usdtaddress") }}
+          <label class="u-line-1">{{ infos.walletAddr }}</label>
         </view>
         <view v-else class="u-line-1">
-          银行卡 <label>{{ infos.bankCardNum }}</label>
+          {{ $t("bank") }} <label>{{ infos.bankCardNum }}</label>
         </view>
       </view>
       <view class="content">
-        <view>提现金额</view>
-
+        <view>{{ $t("withdrawal") }}</view>
         <view class="money">
           <label v-if="type === 1">¥</label>
           <label v-else-if="type === 2">$</label>
@@ -39,24 +39,24 @@
             v-model="amount"
             border="none"
             type="number"
-            placeholder="请输入提现金额"
+            :placeholder="$t('inputWithdrawalMoney')"
             @input="update"
           />
         </view>
-        <view class="text" v-if="type === 1"
-          >可提现金额{{ infos.balance }}元</view
-        >
-        <view class="text" v-else-if="type === 2"
-          >可提现金额{{ infos.usdtAmount }}USDT</view
-        >
+        <view class="text" v-if="type === 1">
+          {{ $t("yesWithdrawalMoney") }}{{ infos.balance }}{{ $t("money") }}
+        </view>
+        <view class="text" v-else-if="type === 2">
+          {{ $t("yesWithdrawalMoney") }}{{ infos.usdtAmount }}{{ $t("usdt") }}
+        </view>
       </view>
       <view class="pay">
-        <label>支付密码</label>
+        <label>{{ $t("payPwd") }}</label>
         <u-input
           v-model="pwd"
           border="none"
           type="password"
-          placeholder="请输入支付密码"
+          :placeholder="$t('inputPayPwd')"
         />
       </view>
       <view class="btns">
@@ -67,12 +67,12 @@
           @click="login"
           :loading="loading"
         >
-          确认提现
+          {{ $t("configWithdraw") }}
         </u-button>
       </view>
     </view>
     <u-picker
-      title="选择提现方式"
+      :title="$t('withdrawalType')"
       :show="show"
       show-toolbar
       :style="{ height: '50%' }"
@@ -91,15 +91,15 @@ export default {
     return {
       columns: [
         [
-          { text: "提现到USDT钱包", value: 2 },
-          { text: "提现到银行卡", value: 1 },
+          { text: this.$t("withdrawalUsdt"), value: 2 },
+          { text: this.$t("withdrawalBank"), value: 1 },
         ],
       ],
       show: false,
       type: 2,
       amount: undefined,
       pwd: "",
-      title: "提现到USDT钱包",
+      title: this.$t("withdrawalUsdt"),
       infos: {},
       loading: false,
     };
@@ -138,15 +138,15 @@ export default {
         balance = this.infos.balance;
       }
       if (!this.amount) {
-        return this.$base.show("请输入提现金额~");
+        return this.$base.show(this.$t("inputWithdrawalMoney"));
       } else if (this.amount > balance) {
-        return this.$base.show("输入的金额不可大于可提现的金额~");
+        return this.$base.show(this.$t("inputNoBalance"));
       } else if (!this.pwd || this.pwd.length < 6) {
-        return this.$base.show("请输入正确的支付密码~");
+        return this.$base.show(this.$("inputConfigPayPwd"));
       } else if (!this.infos.bankCardNum && this.type === 1) {
-        return this.$base.show("请先绑定银行卡~");
+        return this.$base.show(this.$t("inputBingBank"));
       } else if (!this.infos.walletAddr && this.type === 2) {
-        return this.$base.show("请先绑定USDT地址~");
+        return this.$base.show(this.$t("inputBingUsdt"));
       }
       const DATA_OBJ = {
         type: this.type,

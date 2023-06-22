@@ -2,7 +2,7 @@
   <view class="page">
     <u-navbar
       placeholder
-      title="个人中心"
+      :title="$t('user')"
       :border="false"
       autoBack
       fixed
@@ -18,28 +18,34 @@
         <!-- 头部 -->
         <view class="head">
           <view class="head-text">
-            <label>我的账户：{{ userData.userName }}</label>
-            <label>用户等级：{{ userData.userLevelName }}</label>
+            <label>{{ $t("userAccount") }}：{{ userData.userName }}</label>
+            <label>
+              {{ $t("userLevelName") }}：{{ userData.userLevelName }}
+            </label>
           </view>
-          <view class="head-money"> ¥ {{ userData.balance }} </view>
+          <view class="head-money"> {{ $t("r") }} {{ userData.balance }} </view>
           <view class="head-integral">
-            账户余额 ≈ ${{ userData.usdtAmount }}</view
-          >
+            {{ $t("usdtAmount") }} ≈ {{ $t("m") }}{{ userData.usdtAmount }}
+          </view>
         </view>
         <view class="money">
           <view class="interest">
             <view>{{ userData.waitReturnInterest }}</view>
-            <view>待收利息（元）</view>
+            <view>{{ $t("waitReturnInterest") }}（{{ $t("money") }}）</view>
           </view>
           <view class="principal">
             <view>{{ userData.waitReturnPrincipal }}</view>
-            <view>待收本金（元）</view>
+            <view>{{ $t("waitReturnPrincipal") }}（{{ $t("money") }}）</view>
           </view>
         </view>
         <!-- 按钮 -->
         <view class="button-box">
-          <u-button class="button-class" @click="pathChange">充值</u-button>
-          <u-button class="button-class" @click="goWithdraw">提现</u-button>
+          <u-button class="button-class" @click="pathChange">
+            {{ $t("topup") }}
+          </u-button>
+          <u-button class="button-class" @click="goWithdraw">
+            {{ $t("withdrawal") }}
+          </u-button>
         </view>
         <!-- 列表 -->
         <view class="list">
@@ -49,7 +55,7 @@
             @click="downloadChange(config.ouyi_download_url)"
           >
             <image class="icon-img" src="../static/img/okx_app_icon.png" />
-            <label>欧易安卓下载</label>
+            <label>{{ $t("ouyi_download_url") }}</label>
             <view class="icon"></view>
           </view>
           <view
@@ -58,7 +64,7 @@
             @click="downloadChange(config.bian_download_url)"
           >
             <image class="icon-img" src="../static/img/bian_app_icon.png" />
-            <label>币安安卓下载</label>
+            <label>{{ $t("bian_download_url") }}</label>
             <view class="icon"></view>
           </view>
           <view
@@ -67,27 +73,27 @@
             @click="downloadChange(config.huobi_download_url)"
           >
             <image class="icon-img" src="../static/img/icon_app_huobi.png" />
-            <label>火币APP下载</label>
+            <label>{{ $t("huobi_download_url") }}</label>
             <view class="icon"></view>
           </view>
           <view class="list-item" @click="sign">
             <image class="icon-img" src="../static/img/mine_func_qiandao.png" />
-            <label>每日签到</label>
+            <label>{{ $t("sign") }}</label>
             <view class="icon"></view>
           </view>
           <view class="list-item" @click="goFundDetails">
             <image class="icon-img" src="../static/img/mine_func_zijin.png" />
-            <label>资金明细</label>
+            <label>{{ $t("investmentRecords") }}</label>
             <view class="icon"></view>
           </view>
           <view class="list-item" @click="goInvestmentRecords">
             <image class="icon-img" src="../static/img/mine_func_touzi.png" />
-            <label>投资记录</label>
+            <label>{{ $t("fundDetails") }}</label>
             <view class="icon"></view>
           </view>
           <view class="list-item" @click="goRevenueRecords">
             <image class="icon-img" src="../static/img/mine_func_shouyi.png" />
-            <label>收益记录</label>
+            <label>{{ $t("revenueRecords") }}</label>
             <view class="icon"></view>
           </view>
           <view class="list-item" @click="goRechargeRecord">
@@ -95,19 +101,19 @@
               class="icon-img"
               src="../static/img/mine_func_chongzhi.png"
             />
-            <label>充值记录</label>
+            <label>{{ $t("WithdrawalRecords") }}</label>
             <view class="icon"></view>
           </view>
           <view class="list-item" @click="goWithdrawalRecords">
             <image class="icon-img" src="../static/img/mine_func_tixian.png" />
-            <label>提现记录</label>
+            <label>{{ $t("WithdrawalRecords") }}</label>
             <view class="icon"></view>
           </view>
         </view>
         <view class="list">
           <view class="list-item" @click="goAccountSafe">
             <image class="icon-img" src="../static/img/mine_func_anquan.png" />
-            <label>账户安全</label>
+            <label>{{ $t("AccountSafe") }}</label>
             <view class="icon"></view>
           </view>
           <view
@@ -115,27 +121,29 @@
             @click="goBindBank(userData.bankName, userData.bankCardNum)"
           >
             <image class="icon-img" src="../static/img/mine_func_yinhang.png" />
-            <label>银行卡绑定</label>
+            <label>{{ $t("bankCardNumTitle") }}</label>
             <view class="icon"></view>
           </view>
           <view class="list-item" @click="goRealName">
             <image class="icon-img" src="../static/img/mine_func_shiming.png" />
-            <label>实名认证</label>
+            <label>{{ $t("idCard") }}</label>
             <view class="icon"></view>
           </view>
           <view class="list-item" @click="goBindUSDT">
             <image class="icon-img" src="../static/img/mine_func_usdt.png" />
-            <label>USDT绑定地址</label>
+            <label>{{ $t("USDTBind") }}</label>
             <view class="icon"></view>
           </view>
         </view>
         <!-- 退出登录 -->
-        <u-button class="logout" @click="show = true">退出登录</u-button>
+        <u-button class="logout" @click="show = true">
+          {{ $t("loginOut") }}
+        </u-button>
       </view>
     </scroll-view>
     <u-modal
       :show="show"
-      title="退出登陆"
+      :title="$t('loginOut')"
       @confirm="modalChange"
       @cancel="show = false"
       ref="uModal"
@@ -143,7 +151,7 @@
       showCancelButton
       confirmColor="#f6d658"
     >
-      <view class="content">你确定退出吗？</view>
+      <view class="content">{{ $t("loginOutTips") }}</view>
     </u-modal>
   </view>
 </template>
@@ -238,7 +246,7 @@ export default {
     },
     goWithdraw() {
       if (!this.userData.bankCardNum && !this.userData.walletAddr) {
-        return this.$base.show("请先绑定一种提款方式~");
+        return this.$base.show(this.$t("inputwalletType"));
       } else {
         uni.navigateTo({
           url: "/pages/withdraw",
@@ -272,7 +280,6 @@ export default {
       this.$api.user_sign().then((res) => {
         if (res.data.code == 0) {
           this.$base.show(res.data.msg + "~");
-          // 等待提示成功再进行加载
           setTimeout(() => {
             this.getInfo();
           }, 2000);

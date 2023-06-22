@@ -2,7 +2,7 @@
   <view class="page">
     <u-navbar
       placeholder
-      title="公司简介"
+      :title="$t('aboutTitle')"
       :border="false"
       autoBack
       fixed

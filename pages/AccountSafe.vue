@@ -2,7 +2,7 @@
   <view class="page">
     <u-navbar
       placeholder
-      title="账户安全"
+      :title="$t('AccountSafe')"
       :border="false"
       autoBack
       fixed
@@ -20,29 +20,29 @@
           <view class="image">
             <image class="icon-img2" src="../static/img/phone.png" />
           </view>
-          <label>用户名</label>
+          <label>{{ $t("userName") }}</label>
           <view class="right-text">{{ infos.userName }}</view>
         </view>
         <view class="list margintop10 borderBottom" @click="goRealName">
           <view class="image">
             <image class="icon-img" src="../static/img/admin.png" />
           </view>
-          <label>实名认证</label>
+          <label>{{ $t("idCard") }}</label>
           <view class="right-text">{{
-            infos.idCard ? "已认证" : "未认证"
+            infos.idCard ? $t("yesIdCard") : $t("noIdCard")
           }}</view>
         </view>
         <view class="list borderBottom" @click="goChangeLoginPassword">
           <view class="image">
             <image class="icon-img" src="../static/img/pass.png" />
           </view>
-          <label>修改登录密码</label>
+          <label>{{ $t("alterLoginPwd") }}</label>
         </view>
         <view class="list" @click="goModifyPaymentPassword">
           <view class="image">
             <image class="icon-img2" src="../static/img/key.png" />
           </view>
-          <label>修改支付密码</label>
+          <label>{{ $t("alterPayPwd") }}</label>
         </view>
       </view>
     </view>

@@ -2,7 +2,7 @@
   <view class="page">
     <u-navbar
       placeholder
-      title="修改支付密码"
+      :title="$t('alterPayPwd')"
       :border="false"
       autoBack
       fixed
@@ -16,30 +16,30 @@
     </u-navbar>
     <view class="wrap">
       <view class="from-input">
-        <label>原支付密码</label>
+        <label>{{ $t("oldPayPwd") }}</label>
         <input
           type="password"
           v-model="oldPwd"
           class="input-text"
-          placeholder="请输入支付密码"
+          :placeholder="$t('inputPayPwd')"
         />
       </view>
       <view class="from-input">
-        <label>新支付密码</label>
+        <label>{{ $t("newPayPwd") }}</label>
         <input
           v-model="newPwd"
           type="password"
           class="input-text"
-          placeholder="请输入新支付密码"
+          :placeholder="$t('inputNewPayPwd')"
         />
       </view>
       <view class="from-input">
-        <label>确认密码</label>
+        <label>{{ $t("confirmPwd") }}</label>
         <input
           v-model="password"
           type="text"
           class="input-text"
-          placeholder="请输入确认密码"
+          :placeholder="$t('confirmLoginPwd')"
         />
       </view>
       <u-button
@@ -49,7 +49,7 @@
         @click="login"
         :loading="loading"
       >
-        完成修改
+        {{ $t("sucAlter") }}
       </u-button>
     </view>
   </view>
@@ -68,13 +68,13 @@ export default {
   methods: {
     login() {
       if (!this.oldPwd) {
-        return this.$base.show("请输入原支付密码~");
+        return this.$base.show(this.$t("inputPayPwd"));
       } else if (!this.newPwd || this.newPwd.length < 6) {
-        return this.$base.show("请输入新支付密码且长度大于6~");
+        return this.$base.show(this.$t("inputNewPayPwd"));
       } else if (this.oldPwd === this.newPwd) {
-        return this.$base.show("新支付密码不能与原密码相同~");
+        return this.$base.show(this.$t("NoTwoPayPwd"));
       } else if (this.password != this.newPwd) {
-        return this.$base.show("两次输入密码不一致~");
+        return this.$base.show(this.$t("twoPwd"));
       }
       const DATA_OBJ = {
         oldPwd: this.oldPwd,
