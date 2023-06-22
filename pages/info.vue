@@ -26,7 +26,7 @@
               <view class="con">{{ $t("scale") }}</view>
               <view class="num">
                 <text>{{ items.projectAmount }} </text>
-                {{ $t("moeny") }}
+                {{ $t("money") }}
               </view>
             </view>
             <view class="li">

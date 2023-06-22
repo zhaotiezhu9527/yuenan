@@ -17,7 +17,7 @@
     <view class="cardStyle">
       <view class="card">
         <view class="item">
-          <view>{{ $t("availableBalance") }} ({{ $t("moeny") }})</view>
+          <view>{{ $t("availableBalance") }} ({{ $t("money") }})</view>
           <view>{{ infos.balance }}{{ $t("money") }}</view>
         </view>
         <view class="item">
@@ -31,7 +31,7 @@
         <view class="name">{{ $t("minAmount") }}</view>
         <view class="txt">
           <text>{{ items.minAmount }}</text>
-          {{ $t("moeny") }}
+          {{ $t("money") }}
         </view>
       </view>
       <view class="li">

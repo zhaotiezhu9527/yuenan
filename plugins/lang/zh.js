@@ -177,4 +177,5 @@ export default {
   dateTime: "时间",
   sum: "金额",
   abstract: "摘要",
+  balance: "余额（VND）奖励积分（0）",
 };
