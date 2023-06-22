@@ -11,7 +11,7 @@
       leftIconColor="#fff"
       leftIconSize="32"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <view class="wrap">
@@ -33,8 +33,9 @@
       <view class="content">
         <view>{{ $t("withdrawal") }}</view>
         <view class="money">
-          <label v-if="type === 1">¥</label>
-          <label v-else-if="type === 2">$</label>
+          <!-- <label v-if="type === 1">¥</label> -->
+          <!-- <label v-else-if="type === 2">$</label> -->
+          <label></label>
           <u-input
             v-model="amount"
             border="none"

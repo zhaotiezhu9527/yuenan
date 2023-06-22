@@ -11,7 +11,7 @@
       leftIconColor="#fff"
       leftIconSize="32"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <view class="wrap">
@@ -24,7 +24,7 @@
         <view class="line"></view>
         <view class="title-time">{{ $t("detail") }}</view>
         <view class="line"></view>
-        <view class="title-time">{{ $t("contract") }}</view>
+        <!-- <view class="title-time">合同</view> -->
       </view>
       <u-list @scrolltolower="load" v-if="isArray" class="scroll">
         <u-list-item v-for="(item, index) in list" :key="index">
@@ -49,11 +49,11 @@
             </view>
 
             <view class="line"></view>
-            <view class="table-time">
+            <!-- <view class="table-time">
               <label class="grey-text" @click="goContract(item.orderNo)">
                 {{ $t("look") }}
               </label>
-            </view>
+            </view> -->
           </view>
         </u-list-item>
         <view class="loading" v-if="loading">{{ $t("loading") }}...</view>

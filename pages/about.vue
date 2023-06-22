@@ -10,7 +10,7 @@
       safe-area-inset-top
       bgColor="#f6d658"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <view class="wrap">
@@ -18,7 +18,7 @@
         <image
           class="image"
           mode="widthFix"
-          src="../static/img/zhenshi_about_post.png"
+          src="../static/img/about.png"
         />
       </scroll-view>
     </view>

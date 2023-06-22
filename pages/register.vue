@@ -11,7 +11,7 @@
       leftIconColor="#fff"
       leftIconSize="32"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <view class="wrap">
@@ -19,7 +19,7 @@
         <image
           class="img"
           mode="widthFix"
-          src="../static/img/login_zhenhsi_logo.jpg"
+          src="../static/img/login_logo.png"
         />
       </view>
       <view class="form">

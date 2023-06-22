@@ -11,7 +11,7 @@
       leftIconColor="#fff"
       leftIconSize="32"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <view class="wrap">
@@ -25,8 +25,8 @@
             <view class="li">
               <view class="con">{{ $t("scale") }}</view>
               <view class="num">
-                {{ $t("r") }}<text>{{ items.projectAmount }} </text>
-                {{ $t("money") }}
+                <text>{{ items.projectAmount }} </text>
+                {{ $t("moeny") }}
               </view>
             </view>
             <view class="li">
@@ -64,7 +64,7 @@
               height="40"
               :percentage="scheduleFn(items.schedule)"
               :showText="false"
-              activeColor="#2196f3"
+              activeColor="#f6d658"
             ></u-line-progress>
           </view>
         </view>
@@ -250,7 +250,7 @@ text {
 
     .number {
       position: absolute;
-      color: #fff;
+      color: #333;
       font-size: 26rpx;
       width: 100rpx;
       text-align: right;

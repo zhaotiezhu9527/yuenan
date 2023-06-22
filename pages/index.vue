@@ -10,7 +10,7 @@
       safe-area-inset-top
       bgColor="#f6d658"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <view class="wrap">
@@ -47,7 +47,7 @@
           >
             <image class="img" :src="item.img" mode="widthFix" />
             <view class="name">
-              <text>{{ $t("projectName2") }}</text>
+              <text></text>
               <text>{{ item.projectName }}</text>
             </view>
             <view class="rate">
@@ -66,9 +66,9 @@
                 <view class="con">{{ $t("deadline") }}</view></view
               >
               <view class="li">
-                <view class="num">
-                  $t('r')<text>{{ item.minAmount }}</text>
-                  {{ $t("money") }}
+                <view class="num"
+                  ><text>{{ item.minAmount }}</text>
+                  {{ $t("moeny") }}
                 </view>
                 <view class="con">{{ $t("minAmount") }}</view></view
               >
@@ -87,7 +87,7 @@
               <u-line-progress
                 :percentage="scheduleFn(item.schedule)"
                 :showText="false"
-                activeColor="#2196f3"
+                activeColor="#f6d658"
               ></u-line-progress>
               <view class="number">{{ item.schedule }}%</view>
             </view>
@@ -110,6 +110,7 @@ import img6 from "../static/img/func_icon_zhuce.png";
 import img7 from "../static/img/func_icon_kefu.png";
 import banner1 from "../static/img/banner_13.jpg";
 import banner2 from "../static/img/banner_14.jpg";
+import banner3 from "../static/img/banner_15.jpg";
 export default {
   data() {
     return {
@@ -131,7 +132,7 @@ export default {
           path: "/pages/preview",
         },
       ],
-      list2: [banner1, banner2],
+      list2: [banner1, banner2, banner3],
       shopGoods: [],
       config: {},
       infos: {},

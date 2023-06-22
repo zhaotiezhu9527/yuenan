@@ -11,14 +11,14 @@
       leftIconColor="#fff"
       leftIconSize="32"
       height="52px"
-      titleStyle="color:#fff;font-weight:500;font-size:32rpx;"
+      titleStyle="color:#000;font-weight:500;font-size:32rpx;"
     >
     </u-navbar>
     <view class="cardStyle">
       <view class="card">
         <view class="item">
-          <view>{{ $t("availableBalance") }} ({{ $t("money") }})</view>
-          <view>{{ $t("r") }}{{ infos.balance }}{{ $t("money") }}</view>
+          <view>{{ $t("availableBalance") }} ({{ $t("moeny") }})</view>
+          <view>{{ infos.balance }}{{ $t("money") }}</view>
         </view>
         <view class="item">
           <view>{{ $t("investableAmount") }} ({{ $t("money") }})</view>
@@ -29,10 +29,10 @@
     <view class="amount">
       <view class="li">
         <view class="name">{{ $t("minAmount") }}</view>
-        <view class="txt"
-          >{{ $t("r") }}<text>{{ items.minAmount }}</text
-          >{{ $t("money") }}</view
-        >
+        <view class="txt">
+          <text>{{ items.minAmount }}</text>
+          {{ $t("moeny") }}
+        </view>
       </view>
       <view class="li">
         <view class="name">{{ $t("investmentAmount") }}</view>
@@ -215,12 +215,12 @@ text {
 .cardStyle {
   padding: 40rpx 30rpx;
   .card {
-    background-color: #4c80b0;
+    background-color: #f6d658;
     border-radius: 10rpx;
     padding: 40rpx;
     box-sizing: border-box;
     display: flex;
-    color: #fff;
+    color: #333;
     justify-content: center;
     .item {
       width: 50%;
