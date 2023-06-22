@@ -44,7 +44,7 @@
               >
               <view class="li">
                 <view class="num"
-                  >￥<text>{{ item.minAmount }}</text>
+                  ><text>{{ item.minAmount }}</text>
                   元
                 </view>
                 <view class="con">起投金额</view></view

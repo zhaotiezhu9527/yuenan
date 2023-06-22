@@ -18,7 +18,7 @@
       <view class="card">
         <view class="item">
           <view>账户可用余额 (元)</view>
-          <view>￥{{ infos.balance }}元</view>
+          <view>{{ infos.balance }}元</view>
         </view>
         <view class="item">
           <view>项目可投金额 (元)</view>
@@ -30,7 +30,7 @@
       <view class="li">
         <view class="name">起投金额</view>
         <view class="txt"
-          >￥<text>{{ items.minAmount }}</text
+          ><text>{{ items.minAmount }}</text
           >元</view
         >
       </view>

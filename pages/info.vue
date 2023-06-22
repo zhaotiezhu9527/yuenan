@@ -25,7 +25,7 @@
             <view class="li">
               <view class="con">项目规模</view>
               <view class="num">
-                ￥<text>{{ items.projectAmount }} </text>
+                <text>{{ items.projectAmount }} </text>
                 元
               </view>
             </view>

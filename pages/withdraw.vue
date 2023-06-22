@@ -33,8 +33,9 @@
         <view>提现金额</view>
 
         <view class="money">
-          <label v-if="type === 1">¥</label>
-          <label v-else-if="type === 2">$</label>
+          <!-- <label v-if="type === 1">¥</label> -->
+          <!-- <label v-else-if="type === 2">$</label> -->
+          <label></label>
           <u-input
             v-model="amount"
             border="none"

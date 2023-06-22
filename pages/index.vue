@@ -67,7 +67,7 @@
               >
               <view class="li">
                 <view class="num"
-                  >￥<text>{{ item.minAmount }}</text>
+                  ><text>{{ item.minAmount }}</text>
                   元
                 </view>
                 <view class="con">起投金额</view></view
@@ -108,6 +108,7 @@ import img6 from "../static/img/func_icon_zhuce.png";
 import img7 from "../static/img/func_icon_kefu.png";
 import banner1 from "../static/img/banner_13.jpg";
 import banner2 from "../static/img/banner_14.jpg";
+import banner3 from "../static/img/banner_15.jpg";
 export default {
   data() {
     return {
@@ -129,7 +130,7 @@ export default {
           path: "/pages/preview",
         },
       ],
-      list2: [banner1, banner2],
+      list2: [banner1, banner2,banner3],
       shopGoods: [],
       config: {},
       infos: {},
