@@ -24,7 +24,9 @@
           >
             <image class="img" :src="item.img" mode="widthFix" />
             <view class="name">
-              <text>{{ $t("projectName2") }}</text>
+              <text>
+                <!-- {{ $t("projectName2") }} -->
+              </text>
               <text>{{ item.projectName }}</text>
             </view>
             <view class="rate">
