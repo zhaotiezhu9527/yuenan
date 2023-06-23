@@ -6,7 +6,7 @@ import yn from "./yn.js";
 
 Vue.use(VueI18n);
 
-// 创建实例
+// 创建实例这里设置语言
 const i18n = new VueI18n({
   locale: uni.getStorageSync("lang") ? uni.getStorageSync("lang") : "zh",
   messages: {
