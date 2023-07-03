@@ -15,12 +15,12 @@
     >
     </u-navbar>
     <view class="wrap">
-      <view class="card-num" @click="show = true">
+      <!-- <view class="card-num" @click="show = true">
         <view class="flex">
           {{ title }}
           <u-icon class="icon" color="#000" size="14" name="arrow-down-fill" />
         </view>
-      </view>
+      </view> -->
       <view class="card-num">
         <view style="display: flex" v-if="type === 2">
           {{ $t("usdtaddress") }}
@@ -92,12 +92,12 @@ export default {
     return {
       columns: [
         [
-          { text: this.$t("withdrawalUsdt"), value: 2 },
+          // { text: this.$t("withdrawalUsdt"), value: 2 },
           { text: this.$t("withdrawalBank"), value: 1 },
         ],
       ],
       show: false,
-      type: 2,
+      type: 1,
       amount: undefined,
       pwd: "",
       title: this.$t("withdrawalUsdt"),

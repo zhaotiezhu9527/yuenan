@@ -127,11 +127,11 @@
             <label>{{ $t("idCard") }}</label>
             <view class="icon"></view>
           </view>
-          <view class="list-item" @click="goBindUSDT">
+          <!-- <view class="list-item" @click="goBindUSDT">
             <image class="icon-img" src="../static/img/mine_func_usdt.png" />
             <label>{{ $t("USDTBind") }}</label>
             <view class="icon"></view>
-          </view>
+          </view> -->
         </view>
         <!-- 退出登录 -->
         <u-button class="logout" @click="show = true">
